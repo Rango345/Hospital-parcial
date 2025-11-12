@@ -1,0 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package modelo;
+
+/**
+ *
+ * @author Sofia
+ */
+public class PacienteExterno extends Paciente {
+    
+    // citas agendadas? 
+
+    public PacienteExterno(String nombre, double id, String estado, String Historia) {
+        super(nombre, id, estado, Historia);
+    }
+    
+    
+    
+}
