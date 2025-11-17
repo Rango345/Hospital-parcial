@@ -10,16 +10,58 @@ package modelo;
  */
 public class PacienteInterno extends Paciente {
     
-    private String diagnostico;
+    private String estado;
     private int habitacion;
-    private String signosVitales; //objeto
+    private SignosVitales signosVitales;
 
-    public PacienteInterno(String nombre, double id, int habitacion, String diagnostico, String estado, String Historia) {
-        super(nombre, id, estado, Historia);
-        this.diagnostico= diagnostico;
+    public PacienteInterno(String nombre, double id, int habitacion, String diagnostico, String estado, String Historia, SignosVitales signosVitales) {
+        super(nombre, id, diagnostico, Historia);
+        this.estado= estado;
         this.habitacion= habitacion;
         this.signosVitales= signosVitales;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getHabitacion() {
+        return habitacion;
+    }
+
+    public void setHabitacion(int habitacion) {
+        this.habitacion = habitacion;
+    }
+
+    public SignosVitales getSignosVitales() {
+        return signosVitales;
+    }
+
+    public void setSignosVitales(SignosVitales signosVitales) {
+        this.signosVitales = signosVitales;
+    }
     
+    
+    public void evaluarEstado(){
+        
+        
+        if (signosVitales != null){
+            
+            if (signosVitales.getAlertas().isEmpty()){
+                setEstado("Estable");
+            }
+            else {
+                setEstado("Crítico");
+            }
+        }
+
+        else {
+            setEstado("No hay signos vitales registrados");
+        }
+    }
     
 }

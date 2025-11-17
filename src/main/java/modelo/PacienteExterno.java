@@ -12,8 +12,8 @@ public class PacienteExterno extends Paciente {
     
     // citas agendadas? 
 
-    public PacienteExterno(String nombre, double id, String estado, String Historia) {
-        super(nombre, id, estado, Historia);
+    public PacienteExterno(String nombre, double id, String diagnostico, String Historia) {
+        super(nombre, id, diagnostico, Historia);
     }
     
     

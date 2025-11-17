@@ -12,13 +12,13 @@ public abstract class Paciente {
     
     protected String nombre;
     protected double id;
-    protected String estado;
+    protected String diagnostico;
     protected String Historia; //objeto probablemente
 
-    public Paciente(String nombre, double id, String estado, String Historia) {
+    public Paciente(String nombre, double id, String diagnostico, String Historia) {
         this.nombre = nombre;
         this.id = id;
-        this.estado = estado;
+        this.diagnostico = diagnostico;
         this.Historia = Historia;
     }
 
@@ -38,12 +38,12 @@ public abstract class Paciente {
         this.id = id;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getDiagnostico() {
+        return diagnostico;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setDiagnostico(String estado) {
+        this.diagnostico = estado;
     }
 
     public String getHistoria() {
