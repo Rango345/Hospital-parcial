@@ -16,7 +16,7 @@ public class Historial {
     private String medicamentosActuales;
 
     
-    private String antecedentesFamiliares;
+    private String EnfermedadesHereditarias;
 
    
     private String motivoConsulta;
@@ -60,13 +60,15 @@ public class Historial {
         this.medicamentosActuales = medicamentosActuales;
     }
 
-    public String getAntecedentesFamiliares() {
-        return antecedentesFamiliares;
+    public String getEnfermedadesHereditarias() {
+        return EnfermedadesHereditarias;
     }
 
-    public void setAntecedentesFamiliares(String antecedentesFamiliares) {
-        this.antecedentesFamiliares = antecedentesFamiliares;
+    public void setEnfermedadesHereditarias(String EnfermedadesHereditarias) {
+        this.EnfermedadesHereditarias = EnfermedadesHereditarias;
     }
+
+
 
     public String getMotivoConsulta() {
         return motivoConsulta;
