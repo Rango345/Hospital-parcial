@@ -13,13 +13,13 @@ public abstract class Paciente {
     protected String nombre;
     protected double id;
     protected String diagnostico;
-    protected String Historia; //objeto probablemente
+    protected Historial historia; //objeto probablemente
 
-    public Paciente(String nombre, double id, String diagnostico, String Historia) {
+    public Paciente(String nombre, double id, String diagnostico, Historial historia) {
         this.nombre = nombre;
         this.id = id;
         this.diagnostico = diagnostico;
-        this.Historia = Historia;
+        this.historia = historia;
     }
 
     public String getNombre() {
@@ -46,14 +46,12 @@ public abstract class Paciente {
         this.diagnostico = estado;
     }
 
-    public String getHistoria() {
-        return Historia;
+    public Historial getHistoria() {
+        return historia;
     }
 
-    public void setHistoria(String Historia) {
-        this.Historia = Historia;
+    public void setHistoria(Historial historia) {
+        this.historia = historia;
     }
-
-   
     
 }
