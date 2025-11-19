@@ -29,19 +29,29 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        RegistrarPacienteInt = new javax.swing.JButton();
+        RegistrarPacienteExt = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 2, 14)); // NOI18N
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Hospital");
 
-        jButton1.setText("Registrar nuevo paciente interno");
+        RegistrarPacienteInt.setText("Registrar nuevo paciente interno");
+        RegistrarPacienteInt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarPacienteIntActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Registrar nuevo paciente externo");
+        RegistrarPacienteExt.setText("Registrar nuevo paciente externo");
+        RegistrarPacienteExt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistrarPacienteExtActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Consultar pacientes internos");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -62,14 +72,10 @@ public class Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(177, 177, 177)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)
+                    .addComponent(RegistrarPacienteExt)
+                    .addComponent(RegistrarPacienteInt)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(jButton3)))
@@ -78,18 +84,22 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(106, 106, 106)
                 .addComponent(jButton4)
                 .addContainerGap(116, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(RegistrarPacienteInt)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(RegistrarPacienteExt)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addContainerGap(96, Short.MAX_VALUE))
@@ -105,6 +115,16 @@ public class Menu extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void RegistrarPacienteIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarPacienteIntActionPerformed
+        new RegistroPacienteInt().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_RegistrarPacienteIntActionPerformed
+
+    private void RegistrarPacienteExtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarPacienteExtActionPerformed
+        new RegistroPacienteExt().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_RegistrarPacienteExtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,8 +152,8 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton RegistrarPacienteExt;
+    private javax.swing.JButton RegistrarPacienteInt;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;

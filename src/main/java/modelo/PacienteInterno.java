@@ -14,8 +14,8 @@ public class PacienteInterno extends Paciente {
     private int habitacion;
     private SignosVitales signosVitales;
 
-    public PacienteInterno(String nombre, double id, int habitacion, String diagnostico, String estado, Historial historia, SignosVitales signosVitales) {
-        super(nombre, id, diagnostico, historia);
+    public PacienteInterno(String nombre, double id, int habitacion, String estado, Historial historia, SignosVitales signosVitales) {
+        super(nombre, id, historia);
         this.estado= estado;
         this.habitacion= habitacion;
         this.signosVitales= signosVitales;
@@ -47,7 +47,6 @@ public class PacienteInterno extends Paciente {
     
     
     public void evaluarEstado(){
-        
         
         if (signosVitales != null){
             

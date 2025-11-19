@@ -9,11 +9,10 @@ package modelo;
  * @author Sofia
  */
 public class PacienteExterno extends Paciente {
-    
-    // citas agendadas? 
+     
 
-    public PacienteExterno(String nombre, double id, String diagnostico, Historial historia) {
-        super(nombre, id, diagnostico, historia);
+    public PacienteExterno(String nombre, double id, Historial historia) {
+        super(nombre, id, historia);
     }
     
     
