@@ -60,7 +60,6 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         jLabel1.setText("Registro de signos vitales");
 
         campoPresion.setForeground(new java.awt.Color(153, 153, 153));
-        campoPresion.setText("Ingrese el nombre del paciente");
         campoPresion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoPresionActionPerformed(evt);
@@ -80,7 +79,6 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         jLabel5.setText("Frecuencia respiratoria");
 
         campoTemperatura.setForeground(new java.awt.Color(153, 153, 153));
-        campoTemperatura.setText("Ingrese la habitación");
         campoTemperatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoTemperaturaActionPerformed(evt);
@@ -88,7 +86,6 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         });
 
         campoFC.setForeground(new java.awt.Color(153, 153, 153));
-        campoFC.setText("Ingrese el id del paciente");
         campoFC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoFCActionPerformed(evt);
@@ -96,7 +93,6 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         });
 
         campoFR.setForeground(new java.awt.Color(153, 153, 153));
-        campoFR.setText("Ingrese el diagnóstico del paciente");
         campoFR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoFRActionPerformed(evt);
@@ -116,35 +112,36 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(120, 120, 120)
+                .addComponent(jLabel1)
+                .addContainerGap(179, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoFC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoPresion))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
-                                .addComponent(campoTemperatura))
+                                .addComponent(campoTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
-                                .addComponent(campoFR))))
+                                .addComponent(campoFR))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoPresion, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(campoFC, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addComponent(jLabel1)))
-                .addContainerGap(32, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Volver)
-                .addGap(62, 62, 62)
-                .addComponent(Guardar)
+                        .addGap(110, 110, 110)
+                        .addComponent(Volver)
+                        .addGap(77, 77, 77)
+                        .addComponent(Guardar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(88, 88, 88))
         );
         layout.setVerticalGroup(

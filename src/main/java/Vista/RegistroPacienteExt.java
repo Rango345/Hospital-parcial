@@ -8,16 +8,16 @@ import com.mycompany.hospital.Hospital;
 
 /**
  *
- * @author juanc
+ * @author Sofia
  */
-public class RegistroPaciente extends javax.swing.JFrame {
+public class RegistroPacienteExt extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegistroPaciente.class.getName());
-    private PacienteInterno pacienteActual;
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegistroPacienteExt.class.getName());
+
     /**
-     * Creates new form NewJFrame
+     * Creates new form RegistroPacienteExt
      */
-    public RegistroPaciente() {
+    public RegistroPacienteExt() {
         initComponents();
     }
 
@@ -35,11 +35,8 @@ public class RegistroPaciente extends javax.swing.JFrame {
         campoNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        campoHabitacion = new javax.swing.JTextField();
         campoNumero = new javax.swing.JTextField();
         volver = new javax.swing.JButton();
-        botonSignos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +48,7 @@ public class RegistroPaciente extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 2, 14)); // NOI18N
-        jLabel1.setText("Registro Paciente Interno");
+        jLabel1.setText("Registro Paciente Externo");
 
         campoNombre.setForeground(new java.awt.Color(153, 153, 153));
         campoNombre.setText("Ingrese el nombre del paciente");
@@ -66,17 +63,6 @@ public class RegistroPaciente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 2, 12)); // NOI18N
         jLabel3.setText("Número de documento");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 2, 12)); // NOI18N
-        jLabel4.setText("Habitación");
-
-        campoHabitacion.setForeground(new java.awt.Color(153, 153, 153));
-        campoHabitacion.setText("Ingrese la habitación");
-        campoHabitacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoHabitacionActionPerformed(evt);
-            }
-        });
 
         campoNumero.setForeground(new java.awt.Color(153, 153, 153));
         campoNumero.setText("Ingrese el id del paciente");
@@ -93,51 +79,39 @@ public class RegistroPaciente extends javax.swing.JFrame {
             }
         });
 
-        botonSignos.setText("Registrar signos vitales");
-        botonSignos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonSignosActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jLabel1)
-                .addContainerGap(140, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(18, 18, 18)
-                            .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(18, 18, 18)
-                            .addComponent(campoHabitacion))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(campoNombre)))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
                         .addComponent(volver)
-                        .addGap(18, 18, 18)
-                        .addComponent(RegistrarPaciente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonSignos)))
-                .addGap(12, 12, 12))
+                        .addGap(54, 54, 54)
+                        .addComponent(RegistrarPaciente))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -145,16 +119,11 @@ public class RegistroPaciente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(campoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RegistrarPaciente)
                     .addComponent(volver)
-                    .addComponent(botonSignos))
-                .addGap(26, 26, 26))
+                    .addComponent(RegistrarPaciente))
+                .addGap(36, 36, 36))
         );
 
         pack();
@@ -162,37 +131,25 @@ public class RegistroPaciente extends javax.swing.JFrame {
 
     private void RegistrarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarPacienteActionPerformed
         // TODO add your handling code here:
-        
+
         String nombre= campoNombre.getText();
         double id= Double.parseDouble(campoNumero.getText());
-        int habitacion= Integer.parseInt(campoHabitacion.getText());
-        PacienteInterno p = Hospital.crearPacienteInterno(nombre, id, habitacion);
-        this.pacienteActual =p;
+        Hospital.crearPacienteExterno(nombre, id);
     }//GEN-LAST:event_RegistrarPacienteActionPerformed
-
-    private void campoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoHabitacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoHabitacionActionPerformed
-
-    private void campoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumeroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoNumeroActionPerformed
 
     private void campoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNombreActionPerformed
+
+    private void campoNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoNumeroActionPerformed
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
 
         new Menu().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverActionPerformed
-
-    private void botonSignosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSignosActionPerformed
-        
-        new RegistroSignosVitales(this,pacienteActual).setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_botonSignosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,19 +173,16 @@ public class RegistroPaciente extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new RegistroPaciente().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new RegistroPacienteExt().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RegistrarPaciente;
-    private javax.swing.JButton botonSignos;
-    private javax.swing.JTextField campoHabitacion;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoNumero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

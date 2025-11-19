@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Hospital {
     
     static ArrayList<PacienteInterno> pacientesint = new ArrayList<>();
+    static ArrayList<PacienteExterno> pacientesext = new ArrayList<>();
 
     public static void main(String[] args) { 
         
@@ -24,6 +25,14 @@ public class Hospital {
         PacienteInterno p= new PacienteInterno(nombre, id, habitacion, null, null, null);
         p.setSignosVitales(new SignosVitales(0,0,0,0));
         pacientesint.add(p);
+        return p;
+    }
+    
+     public static PacienteExterno crearPacienteExterno(String nombre, double id){
+        
+        PacienteExterno p= new PacienteExterno(nombre, id, null);
+        
+        pacientesext.add(p);
         return p;
     }
     
