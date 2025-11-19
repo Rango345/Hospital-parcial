@@ -13,24 +13,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 import modelo.*;
+import con.Hospital;
 
 public class prueba extends JFrame {
 
-    private List<PacienteInterno> pacientes;
-    private Detallespaciente ventanaDetalle = null; // Se crea solo cuando se necesite
 
-    public prueba(List<PacienteInterno> pacientes) {
-        this.pacientes = pacientes;
-        initComponents();
-    }
 
     private void initComponents() {
-        this.setLayout(new GridLayout(0, 1)); // Agrega botones en columna
+        this.setLayout(new GridLayout(0, 1));
 
-        for (PacienteInterno paciente : pacientes) {
+        for (PacienteInterno paciente : Hospital.pacientesint) {
             JButton botonPaciente = new JButton(paciente.getNombre());
 
-            botonPaciente.addActionListener(e -> mostrarDetalle(paciente));
+            botonPaciente.addActionListener(e -> {
+                Detallespaciente ventana = new Detallespaciente(paciente);
+                ventana.setVisible(true);
+            });
 
             this.add(botonPaciente);
         }
@@ -39,15 +37,4 @@ public class prueba extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Pacientes Internos");
     }
-
-    private void mostrarDetalle(PacienteInterno paciente) {
-        if (ventanaDetalle == null) {
-            ventanaDetalle = new Detallespaciente(paciente);
-        } else {
-            ventanaDetalle.setPaciente(paciente); 
-        }
-
-        ventanaDetalle.setVisible(true);
-        ventanaDetalle.toFront();
     }
-}

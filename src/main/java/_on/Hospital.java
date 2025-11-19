@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Hospital {
     
-    static ArrayList<PacienteInterno> pacientesint = new ArrayList<>();
+    public static ArrayList<PacienteInterno> pacientesint = new ArrayList<>();
     static ArrayList<PacienteExterno> pacientesext = new ArrayList<>();
 
     public static void main(String[] args) { 
