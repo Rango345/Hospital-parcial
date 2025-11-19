@@ -3,12 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import con.Hospital;
+import modelo.*;
 /**
  *
  * @author Sofia
  */
 public class Menu extends javax.swing.JFrame {
+    
+    private Hospital hospital;
+
+    public Menu(Hospital hospital) {
+    this.hospital = hospital;
+    initComponents();
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Menu.class.getName());
 
@@ -113,7 +121,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+    prueba ventanaPacientes = new prueba(hospital.getPacientesint());
+    ventanaPacientes.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void RegistrarPacienteIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarPacienteIntActionPerformed
