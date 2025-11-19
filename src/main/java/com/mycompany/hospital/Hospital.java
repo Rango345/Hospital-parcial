@@ -4,13 +4,37 @@
 
 package com.mycompany.hospital;
 
+import modelo.*;
+import java.util.ArrayList;
+
 /**
  *
  * @author juanc
  */
 public class Hospital {
+    
+    static ArrayList<PacienteInterno> pacientesint = new ArrayList<>();
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+    public static void main(String[] args) { 
+        
+    }
+    
+    public static PacienteInterno crearPacienteInterno(String nombre, double id, int habitacion){
+        
+        PacienteInterno p= new PacienteInterno(nombre, id, habitacion, null, null, null);
+        p.setSignosVitales(new SignosVitales(0,0,0,0));
+        pacientesint.add(p);
+        return p;
+    }
+    
+    public static void guardarSignos (PacienteInterno p, double presion, double fc, double temperatura, double fr){
+        
+        p.getSignosVitales().setPresion(presion);
+        p.getSignosVitales().setFrecuenciaCardiaca(fc);
+        p.getSignosVitales().setTemperatura(temperatura);
+        p.getSignosVitales().setFrecuenciaRespiratoria(fr);
+        
+        p.getSignosVitales().EvaluarAlertas(fc, temperatura, fr);
+        p.evaluarEstado();
     }
 }
