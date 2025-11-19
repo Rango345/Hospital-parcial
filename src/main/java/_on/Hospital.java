@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.hospital;
+package con;
 
 import modelo.*;
 import java.util.ArrayList;
@@ -45,5 +45,9 @@ public class Hospital {
         
         p.getSignosVitales().EvaluarAlertas(fc, temperatura, fr);
         p.evaluarEstado();
+    }
+    
+        public ArrayList<PacienteInterno> getPacientesint() {
+        return pacientesint;
     }
 }
