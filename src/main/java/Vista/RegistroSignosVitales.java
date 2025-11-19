@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-import com.mycompany.hospital.Hospital;
+import con.Hospital;
 import modelo.*;
 import javax.swing.JFrame;
 

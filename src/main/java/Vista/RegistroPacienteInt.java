@@ -4,7 +4,7 @@
  */
 package Vista;
 import modelo.*;
-import com.mycompany.hospital.Hospital;
+import con.Hospital;
 
 /**
  *
