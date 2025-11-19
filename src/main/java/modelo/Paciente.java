@@ -14,7 +14,7 @@ public abstract class Paciente {
     protected double id;
     protected String diagnostico;
     protected Historial historia; 
-
+    
     public Paciente(String nombre, double id, Historial historia) {
         this.nombre = nombre;
         this.id = id;

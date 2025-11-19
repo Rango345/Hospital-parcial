@@ -104,12 +104,8 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jLabel1)
-                .addContainerGap(140, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
@@ -131,6 +127,10 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botonSignos)))
                 .addGap(12, 12, 12))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,6 +168,10 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         int habitacion= Integer.parseInt(campoHabitacion.getText());
         PacienteInterno p = Hospital.crearPacienteInterno(nombre, id, habitacion);
         this.pacienteActual =p;
+        
+        HistorialFrame historial = new HistorialFrame(pacienteActual);
+       historial.setVisible(true);
+       dispose();
     }//GEN-LAST:event_RegistrarPacienteActionPerformed
 
     private void campoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoHabitacionActionPerformed
@@ -193,7 +197,7 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         new RegistroSignosVitales(this,pacienteActual).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_botonSignosActionPerformed
-
+           private PacienteInterno pac;
     /**
      * @param args the command line arguments
      */

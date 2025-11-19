@@ -14,15 +14,24 @@ public class Historial {
     private String cirugiasPrevias;
     private String alergias;
     private String medicamentosActuales;
-
-    
     private String EnfermedadesHereditarias;
-
-   
     private String motivoConsulta;
     private String diagnostico;
     private String tratamiento;
     private String observaciones;
+    
+
+    public Historial(String enfermedadesPrevias, String cirugiasPrevias, String alergias, String medicamentosActuales, String EnfermedadesHereditarias, String motivoConsulta, String diagnostico, String tratamiento, String observaciones) {
+        this.enfermedadesPrevias = enfermedadesPrevias;
+        this.cirugiasPrevias = cirugiasPrevias;
+        this.alergias = alergias;
+        this.medicamentosActuales = medicamentosActuales;
+        this.EnfermedadesHereditarias = EnfermedadesHereditarias;
+        this.motivoConsulta = motivoConsulta;
+        this.diagnostico = diagnostico;
+        this.tratamiento = tratamiento;
+        this.observaciones = observaciones;
+    }
 
     
     public Historial() {

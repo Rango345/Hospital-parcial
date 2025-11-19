@@ -15,9 +15,11 @@ import java.util.List;
 import modelo.*;
 import con.Hospital;
 
-public class prueba extends JFrame {
-
-
+public class informeint extends JFrame {
+    
+        public informeint() {
+        initComponents();
+    }
 
     private void initComponents() {
         this.setLayout(new GridLayout(0, 1));

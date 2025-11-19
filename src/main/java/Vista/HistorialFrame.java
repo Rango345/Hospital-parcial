@@ -3,14 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
-import modelo.Historial;
+import javax.swing.*;
+import modelo.*;
+import con.Hospital;
 
 /**
  *
  * @author juanc
  */
 public class HistorialFrame extends javax.swing.JFrame {
+
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Historial.class.getName());
 
@@ -175,6 +177,11 @@ public class HistorialFrame extends javax.swing.JFrame {
         });
 
         Siguiente.setText("Siguiente");
+        Siguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SiguienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -304,7 +311,15 @@ public class HistorialFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimpiarActionPerformed
-        // TODO add your handling code here:
+    Cigpre.setText("");
+    Enfher.setText("");
+    Enfprev.setText("");
+    Medac.setText("");
+    motivo.setText("");
+    obser.setText("");
+    trata.setText("");
+    ale.setText("");
+    diag.setText("");
     }//GEN-LAST:event_LimpiarActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
@@ -312,28 +327,39 @@ public class HistorialFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_VolverActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        guardarHistorial();
+        Historial historial = new Historial(
+        Enfprev.getText(),
+        Cigpre.getText(),
+        ale.getText(),
+        Medac.getText(),
+        motivo.getText(),
+        diag.getText(),
+        trata.getText(),
+        obser.getText(),
+        Enfher.getText()
+    );
+
+    paciente.setHistoria(historial);
+
+    JOptionPane.showMessageDialog(this, "Historial guardado para " + paciente.getNombre());
+    //Hospital.pacientesint.add(paciente);
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
         // TODO add your handling code here:
     }//GEN-LAST:event_formComponentHidden
-    private void guardarHistorial() {
-    
-    Historial historial = new Historial();
 
-    // Vincular cada JTextArea con su atributo correspondiente
-    historial.setCirugiasPrevias(Cigpre.getText());
-    historial.setEnfermedadesHereditarias(Enfher.getText());
-    historial.setEnfermedadesPrevias(Enfprev.getText());
-    historial.setMedicamentosActuales(Medac.getText());
-    historial.setMotivoConsulta(motivo.getText());
-    historial.setObservaciones(obser.getText());
-    historial.setTratamiento(trata.getText());
-    historial.setAlergias(ale.getText());
-    historial.setDiagnostico(diag.getText());
-    
-    }
+    private void SiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguienteActionPerformed
+    Menu menu = new Menu();
+    menu.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_SiguienteActionPerformed
+    private PacienteInterno paciente;
+
+    public HistorialFrame(PacienteInterno paciente) {
+    initComponents();
+    this.paciente = paciente;
+}
     /**
      * @param args the command line arguments
      */
