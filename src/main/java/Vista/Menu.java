@@ -121,8 +121,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    prueba ventanaPacientes = new prueba();
+    informeint ventanaPacientes = new informeint();
     ventanaPacientes.setVisible(true);
+    dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void RegistrarPacienteIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarPacienteIntActionPerformed
