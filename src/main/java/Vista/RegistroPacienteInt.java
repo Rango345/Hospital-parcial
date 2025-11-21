@@ -5,6 +5,7 @@
 package Vista;
 import modelo.*;
 import con.Hospital;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -55,7 +56,6 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         jLabel1.setText("Registro Paciente Interno");
 
         campoNombre.setForeground(new java.awt.Color(153, 153, 153));
-        campoNombre.setText("Ingrese el nombre del paciente");
         campoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoNombreActionPerformed(evt);
@@ -72,7 +72,6 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         jLabel4.setText("Habitación");
 
         campoHabitacion.setForeground(new java.awt.Color(153, 153, 153));
-        campoHabitacion.setText("Ingrese la habitación");
         campoHabitacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoHabitacionActionPerformed(evt);
@@ -80,7 +79,6 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         });
 
         campoNumero.setForeground(new java.awt.Color(153, 153, 153));
-        campoNumero.setText("Ingrese el id del paciente");
         campoNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoNumeroActionPerformed(evt);
@@ -112,29 +110,6 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(18, 18, 18)
-                            .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(18, 18, 18)
-                            .addComponent(campoHabitacion))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(campoNombre)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(volver)
-                        .addGap(26, 26, 26)
-                        .addComponent(agregarHistorial)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonSignos)))
-                .addGap(12, 12, 12))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -144,13 +119,38 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
                         .addGap(141, 141, 141)
                         .addComponent(RegistrarPaciente)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(volver)
+                        .addGap(26, 26, 26)
+                        .addComponent(agregarHistorial)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonSignos)
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(campoHabitacion))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(campoNombre))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(53, 53, 53))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -162,7 +162,7 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(campoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(RegistrarPaciente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -183,6 +183,13 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         int habitacion= Integer.parseInt(campoHabitacion.getText());
         PacienteInterno p = Hospital.crearPacienteInterno(nombre, id, habitacion);
         this.pacienteActual = p;
+        
+        JOptionPane.showMessageDialog(this, "Paciente " + p.getNombre()+ " registrad@ correctamente");
+        
+        campoNombre.setText("");
+        campoNumero.setText("");
+        campoHabitacion.setText("");
+        
     }//GEN-LAST:event_RegistrarPacienteActionPerformed
 
     private void campoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoHabitacionActionPerformed
@@ -212,7 +219,7 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
 
     private void agregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarHistorialActionPerformed
         
-       HistorialFrame historial = new HistorialFrame(pacienteActual);
+       HistorialInt historial = new HistorialInt(pacienteActual);
        historial.setVisible(true);
        dispose();
     }//GEN-LAST:event_agregarHistorialActionPerformed

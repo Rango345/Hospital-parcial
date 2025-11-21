@@ -14,9 +14,9 @@ import modelo.*;
  */
 
 
-public class Detallespaciente extends JFrame {
+public class DetallespacienteInt extends JFrame {
 
-    public Detallespaciente(PacienteInterno paciente) {
+    public DetallespacienteInt(PacienteInterno paciente) {
         initComponents(paciente);
     }
 
@@ -65,6 +65,15 @@ public class Detallespaciente extends JFrame {
         textoDetalle.setText(detalles.toString());
 
         this.add(new JScrollPane(textoDetalle), BorderLayout.CENTER);
+        
+        JButton botonVolver = new JButton("Volver");
+        botonVolver.addActionListener(e -> {
+            new InformeInter().setVisible(true);
+            dispose();
+        });
+
+        this.add(botonVolver, BorderLayout.SOUTH);
+        
 
         this.setSize(500, 400);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
