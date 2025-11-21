@@ -148,7 +148,6 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
 
         String nombre= campoNombre.getText();
         double id= Double.parseDouble(campoNumero.getText());
-        Hospital.crearPacienteExterno(nombre, id);
         PacienteExterno p = Hospital.crearPacienteExterno(nombre, id);
         this.pacienteActual =p;
         
