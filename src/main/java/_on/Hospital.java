@@ -3,7 +3,7 @@
  */
 
 package con;
-
+import Vista.*;
 import modelo.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -18,7 +18,7 @@ public class Hospital {
     public static ArrayList<PacienteExterno> pacientesext = new ArrayList<>();
 
     public static void main(String[] args) { 
-        
+        new Menu().setVisible(true);
     }
     
     public static PacienteInterno crearPacienteInterno(String nombre, String id, int habitacion){
