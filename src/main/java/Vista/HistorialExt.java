@@ -374,15 +374,15 @@ public class HistorialExt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Cigpre;
-    private javax.swing.JTextArea Enfher;
-    private javax.swing.JTextArea Enfprev;
+    public javax.swing.JTextArea Cigpre;
+    public javax.swing.JTextArea Enfher;
+    public javax.swing.JTextArea Enfprev;
     private javax.swing.JButton Guardar;
-    private javax.swing.JButton Limpiar;
-    private javax.swing.JTextArea Medac;
+    public javax.swing.JButton Limpiar;
+    public javax.swing.JTextArea Medac;
     private javax.swing.JButton Siguiente;
-    private javax.swing.JTextArea ale;
-    private javax.swing.JTextArea diag;
+    public javax.swing.JTextArea ale;
+    public javax.swing.JTextArea diag;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -405,8 +405,8 @@ public class HistorialExt extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextArea motivo;
-    private javax.swing.JTextArea obser;
-    private javax.swing.JTextArea trata;
+    public javax.swing.JTextArea motivo;
+    public javax.swing.JTextArea obser;
+    public javax.swing.JTextArea trata;
     // End of variables declaration//GEN-END:variables
 }
