@@ -4,7 +4,7 @@
  */
 package Vista;
 import modelo.*;
-import con.Hospital;
+import controlador.Hospital;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
 
