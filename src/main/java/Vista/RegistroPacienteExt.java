@@ -13,7 +13,7 @@ import con.Hospital;
 public class RegistroPacienteExt extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegistroPacienteExt.class.getName());
-
+    private PacienteExterno pacienteActual;
     /**
      * Creates new form RegistroPacienteExt
      */
@@ -135,6 +135,12 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
         String nombre= campoNombre.getText();
         double id= Double.parseDouble(campoNumero.getText());
         Hospital.crearPacienteExterno(nombre, id);
+        PacienteExterno p = Hospital.crearPacienteExterno(nombre, id);
+        this.pacienteActual =p;
+        
+        HistorialExt historial = new HistorialExt(pacienteActual);
+        historial.setVisible(true);
+        dispose();
     }//GEN-LAST:event_RegistrarPacienteActionPerformed
 
     private void campoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNombreActionPerformed
