@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package con;
+package controlador;
 import Vista.*;
 import modelo.*;
 import java.util.ArrayList;

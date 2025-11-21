@@ -8,7 +8,7 @@ package Vista;
 import Vista.*;
 import javax.swing.*;
 import modelo.*;
-import con.Hospital;
+import controlador.Hospital;
 
 /**
  *

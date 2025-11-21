@@ -4,7 +4,7 @@
  */
 package Vista;
 import modelo.*;
-import con.Hospital;
+import controlador.Hospital;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
