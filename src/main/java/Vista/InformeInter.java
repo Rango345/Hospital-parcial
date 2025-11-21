@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author Sofia
  */
-public class informeExt extends javax.swing.JFrame {
+public class InformeInter extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(informeExt.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InformeInter.class.getName());
 
     /**
      * Creates new form MostrarSignos
      */
-    public informeExt() {
+    public InformeInter() {
         initComponents();
     }
 
@@ -175,7 +175,7 @@ public class informeExt extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new informeExt().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new InformeInter().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

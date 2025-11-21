@@ -121,7 +121,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_consPExtActionPerformed
 
     private void ConsPIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsPIntActionPerformed
-    informeExt informeInternos = new informeExt();
+    InformeInter informeInternos = new InformeInter();
     informeInternos.setVisible(true);
     dispose();
     }//GEN-LAST:event_ConsPIntActionPerformed
