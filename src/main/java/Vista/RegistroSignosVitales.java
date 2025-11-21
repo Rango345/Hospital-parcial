@@ -178,6 +178,11 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         double temperatura = Double.parseDouble(campoTemperatura.getText());
         double fr = Double.parseDouble(campoFR.getText());
         
+        if (campoPresion.getText().isEmpty() || campoFC.getText().isEmpty() || campoTemperatura.getText().isEmpty() || campoFR.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         SignosVitales signos= new SignosVitales(presion,fc,temperatura,fr);
         paciente.setSignosVitales(signos);
         signos.EvaluarAlertas();

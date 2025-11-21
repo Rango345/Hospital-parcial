@@ -147,7 +147,18 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         String nombre= campoNombre.getText();
-        double id= Double.parseDouble(campoNumero.getText());
+        String id= campoNumero.getText();
+        
+        if (nombre.isEmpty() || id.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!id.matches("\\d{1,9}") || id.length()>10) {
+            JOptionPane.showMessageDialog(this,"Número de documento inválido","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
         PacienteExterno p = Hospital.crearPacienteExterno(nombre, id);
         this.pacienteActual =p;
         

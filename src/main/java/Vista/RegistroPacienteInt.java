@@ -179,8 +179,26 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String nombre= campoNombre.getText();
-        double id= Double.parseDouble(campoNumero.getText());
-        int habitacion= Integer.parseInt(campoHabitacion.getText());
+        String id= campoNumero.getText();
+        String habitacionStr= campoHabitacion.getText();
+        
+        if (nombre.isEmpty() || id.isEmpty() || habitacionStr.isEmpty()) {
+            JOptionPane.showMessageDialog(this,"Todos los campos son obligatorios","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!id.matches("\\d{1,9}") || id.length()>10) {
+            JOptionPane.showMessageDialog(this,"Número de documento inválido","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!habitacionStr.matches("\\d+") || habitacionStr.length() > 3) {
+            JOptionPane.showMessageDialog(this,"Habitación inválida","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int habitacion = Integer.parseInt(habitacionStr);
+        
         PacienteInterno p = Hospital.crearPacienteInterno(nombre, id, habitacion);
         this.pacienteActual = p;
         

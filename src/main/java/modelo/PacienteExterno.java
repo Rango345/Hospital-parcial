@@ -11,7 +11,7 @@ package modelo;
 public class PacienteExterno extends Paciente {
      
 
-    public PacienteExterno(String nombre, double id, Historial historia) {
+    public PacienteExterno(String nombre, String id, Historial historia) {
         super(nombre, id, historia);
     }
     

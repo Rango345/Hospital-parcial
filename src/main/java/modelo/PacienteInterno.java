@@ -14,7 +14,7 @@ public class PacienteInterno extends Paciente {
     private int habitacion;
     private SignosVitales signosVitales;
 
-    public PacienteInterno(String nombre, double id, int habitacion, String estado, Historial historia, SignosVitales signosVitales) {
+    public PacienteInterno(String nombre, String id, int habitacion, String estado, Historial historia, SignosVitales signosVitales) {
         super(nombre, id, historia);
         this.estado= estado;
         this.habitacion= habitacion;
