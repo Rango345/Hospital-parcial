@@ -22,6 +22,7 @@ public class SignosVitales {
         this.frecuenciaCardiaca = frecuenciaCardiaca;
         this.temperatura = temperatura;
         this.frecuenciaRespiratoria = frecuenciaRespiratoria;
+        this.alertas= new ArrayList<>();
     }
 
     public double getPresion() {
@@ -61,7 +62,7 @@ public class SignosVitales {
     }
     
     
-    public ArrayList<String> EvaluarAlertas(double frecuenciaCardiaca, double temperatura, double frecuenciaRespiratoria){
+    public ArrayList<String> EvaluarAlertas(){
         
         if (frecuenciaCardiaca > 100) {
             alertas.add("Taquicardia detectada");
@@ -74,7 +75,7 @@ public class SignosVitales {
             alertas.add("Fiebre detectada");
         }
         
-        if (frecuenciaRespiratoria > 20 || frecuenciaRespiratoria > 12){
+        if (frecuenciaRespiratoria > 20 || frecuenciaRespiratoria < 12){
             alertas.add("Respiración alterada");
         }
         

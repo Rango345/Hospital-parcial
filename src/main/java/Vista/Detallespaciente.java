@@ -29,6 +29,7 @@ public class Detallespaciente extends JFrame {
         StringBuilder detalles = new StringBuilder();
 
         detalles.append("Nombre: ").append(paciente.getNombre()).append("\n");
+        detalles.append("Número de documento: ").append(paciente.getId()).append("\n");
         detalles.append("Habitación: ").append(paciente.getHabitacion()).append("\n");
         detalles.append("Estado: ").append(paciente.getEstado()).append("\n\n");
 
@@ -43,10 +44,23 @@ public class Detallespaciente extends JFrame {
             detalles.append("Motivo de Consulta: ").append(h.getMotivoConsulta()).append("\n");
             detalles.append("Diagnóstico: ").append(h.getDiagnostico()).append("\n");
             detalles.append("Tratamiento: ").append(h.getTratamiento()).append("\n");
-            detalles.append("Observaciones: ").append(h.getObservaciones()).append("\n");
+            detalles.append("Observaciones: ").append(h.getObservaciones()).append("\n\n");
         } else {
             detalles.append("No hay historial registrado.\n");
         }
+        
+        SignosVitales s = paciente.getSignosVitales();
+        
+        if(s != null){
+            detalles.append("Alertas: \n").append(s.getAlertas()).append("\n");
+            detalles.append("Presión: ").append(s.getPresion()).append("\n");
+            detalles.append("Frecuencia cardíaca: ").append(s.getFrecuenciaCardiaca()).append("\n");
+            detalles.append("Temperatura: ").append(s.getTemperatura()).append("\n");
+            detalles.append("Frecuencia respiratoria: ").append(s.getFrecuenciaRespiratoria()).append("\n");
+        } else {
+            detalles.append("No hay signos vitaes registrados.\n");
+        }
+        
 
         textoDetalle.setText(detalles.toString());
 
