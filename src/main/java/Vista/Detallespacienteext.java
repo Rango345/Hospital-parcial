@@ -53,15 +53,27 @@ public class Detallespacienteext extends JFrame {
 
         this.add(new JScrollPane(textoDetalle), BorderLayout.CENTER);
         
-        JButton botonVolver = new JButton("Volver");
-        botonVolver.addActionListener(e -> {
+        JPanel panelBotones = new JPanel(new FlowLayout());
+
+        JButton btnVolver = new JButton("Volver");
+        JButton btnHistorial = new JButton("Registrar Historial");
+        
+        
+        btnVolver.addActionListener(e -> {
             new InformeExt().setVisible(true);
             dispose();
         });
-
-        this.add(botonVolver, BorderLayout.SOUTH);
         
+         btnHistorial.addActionListener(e -> {
+            new HistorialExt(pacientes).setVisible(true);
+            dispose();
+        });
+         
+        panelBotones.add(btnVolver);
+        panelBotones.add(btnHistorial);
 
+        this.add(panelBotones, BorderLayout.SOUTH);
+        
         this.setSize(500, 400);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Detalle - " + pacientes.getNombre());

@@ -66,13 +66,32 @@ public class DetallespacienteInt extends JFrame {
 
         this.add(new JScrollPane(textoDetalle), BorderLayout.CENTER);
         
-        JButton botonVolver = new JButton("Volver");
-        botonVolver.addActionListener(e -> {
+        JPanel panelBotones = new JPanel(new FlowLayout());
+
+        JButton btnVolver = new JButton("Volver");
+        JButton btnHistorial = new JButton("Registrar/actualizar Historial");
+        JButton btnSignos = new JButton("Registrar/actualizar Signos Vitales");
+        
+        btnVolver.addActionListener(e -> {
             new InformeInter().setVisible(true);
             dispose();
         });
+        
+        btnHistorial.addActionListener(e -> {
+            new HistorialInt(paciente).setVisible(true);
+            dispose();
+        });
+        
+        btnSignos.addActionListener(e -> {
+            new RegistroSignosVitales(paciente).setVisible(true);
+            dispose();
+        });
 
-        this.add(botonVolver, BorderLayout.SOUTH);
+        panelBotones.add(btnVolver);
+        panelBotones.add(btnHistorial);
+        panelBotones.add(btnSignos);
+
+        this.add(panelBotones, BorderLayout.SOUTH);
         
 
         this.setSize(500, 400);

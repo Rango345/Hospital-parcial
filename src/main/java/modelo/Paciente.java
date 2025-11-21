@@ -11,11 +11,11 @@ package modelo;
 public abstract class Paciente {
     
     protected String nombre;
-    protected double id;
+    protected String id;
     protected String diagnostico;
     protected Historial historia; 
     
-    public Paciente(String nombre, double id, Historial historia) {
+    public Paciente(String nombre, String id, Historial historia) {
         this.nombre = nombre;
         this.id = id;
         this.historia = historia;
@@ -29,11 +29,11 @@ public abstract class Paciente {
         this.nombre = nombre;
     }
 
-    public double getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(double id) {
+    public void setId(String id) {
         this.id = id;
     }
 

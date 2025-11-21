@@ -21,14 +21,14 @@ public class Hospital {
         
     }
     
-    public static PacienteInterno crearPacienteInterno(String nombre, double id, int habitacion){
+    public static PacienteInterno crearPacienteInterno(String nombre, String id, int habitacion){
         
         PacienteInterno p= new PacienteInterno(nombre, id, habitacion, null, null, null);
         pacientesint.add(p);
         return p;
     }
     
-     public static PacienteExterno crearPacienteExterno(String nombre, double id){
+     public static PacienteExterno crearPacienteExterno(String nombre, String id){
         
         PacienteExterno p= new PacienteExterno(nombre, id, null);
         
