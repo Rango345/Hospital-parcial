@@ -117,7 +117,8 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void consPExtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consPExtActionPerformed
-        // TODO add your handling code here:
+        new InformeExt().setVisible(true);
+        dispose();
     }//GEN-LAST:event_consPExtActionPerformed
 
     private void ConsPIntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsPIntActionPerformed

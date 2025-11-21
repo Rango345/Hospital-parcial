@@ -39,9 +39,7 @@
                       <Component id="Guardar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="Limpiar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Volver" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                       <Component id="Siguiente" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -164,7 +162,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Guardar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="Limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Volver" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="Siguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -416,14 +413,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LimpiarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Volver">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Volver"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VolverActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Siguiente">

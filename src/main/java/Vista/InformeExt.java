@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author Sofia
  */
-public class InformeInter extends javax.swing.JFrame {
+public class InformeExt extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InformeInter.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InformeExt.class.getName());
 
     /**
-     * Creates new form MostrarSignos
+     * Creates new form InformeExt
      */
-    public InformeInter() {
+    public InformeExt() {
         initComponents();
     }
 
@@ -49,14 +49,14 @@ public class InformeInter extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Documento", "Estado"
+                "Nombre", "Documento"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -70,7 +70,7 @@ public class InformeInter extends javax.swing.JFrame {
         jTable1.setColumnSelectionAllowed(true);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
-        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         Volver.setText("Volver");
         Volver.addActionListener(new java.awt.event.ActionListener() {
@@ -128,10 +128,10 @@ public class InformeInter extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Seleccione un paciente");
             return;
         }
-        
-        PacienteInterno seleccionado = null;
 
-        for (PacienteInterno p : Hospital.pacientesint) {
+        PacienteExterno seleccionado = null;
+
+        for (PacienteExterno p : Hospital.pacientesext) {
             if (String.valueOf(p.getNombre()).equals(jTable1.getValueAt(fila, 0))) {
                 seleccionado = p;
                 break;
@@ -139,7 +139,7 @@ public class InformeInter extends javax.swing.JFrame {
         }
 
         if (seleccionado != null) {
-            new DetallespacienteInt(seleccionado).setVisible(true);
+            new Detallespacienteext(seleccionado).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_verDetActionPerformed
@@ -148,8 +148,8 @@ public class InformeInter extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
 
-        for (PacienteInterno p : Hospital.pacientesint) {
-            modelo.addRow(new Object[]{p.getNombre(),p.getId(),p.getEstado()});
+        for (PacienteExterno p : Hospital.pacientesext) {
+            modelo.addRow(new Object[]{p.getNombre(),p.getId()});
         }
     }//GEN-LAST:event_formWindowOpened
 
@@ -175,7 +175,7 @@ public class InformeInter extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new InformeInter().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new InformeExt().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

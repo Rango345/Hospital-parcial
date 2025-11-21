@@ -28,7 +28,7 @@ public class informeint extends JFrame {
             JButton botonPaciente = new JButton(paciente.getNombre());
 
             botonPaciente.addActionListener(e -> {
-                Detallespaciente ventana = new Detallespaciente(paciente);
+                DetallespacienteInt ventana = new DetallespacienteInt(paciente);
                 ventana.setVisible(true);
             });
 

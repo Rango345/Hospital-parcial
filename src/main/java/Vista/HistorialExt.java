@@ -68,7 +68,6 @@ public class HistorialExt extends javax.swing.JFrame {
         obser = new javax.swing.JTextArea();
         Guardar = new javax.swing.JButton();
         Limpiar = new javax.swing.JButton();
-        Volver = new javax.swing.JButton();
         Siguiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -172,13 +171,6 @@ public class HistorialExt extends javax.swing.JFrame {
             }
         });
 
-        Volver.setText("Volver");
-        Volver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolverActionPerformed(evt);
-            }
-        });
-
         Siguiente.setText("Siguiente");
         Siguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,9 +194,7 @@ public class HistorialExt extends javax.swing.JFrame {
                         .addComponent(Guardar)
                         .addGap(18, 18, 18)
                         .addComponent(Limpiar)
-                        .addGap(18, 18, 18)
-                        .addComponent(Volver)
-                        .addGap(18, 18, 18)
+                        .addGap(108, 108, 108)
                         .addComponent(Siguiente)))
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -304,7 +294,6 @@ public class HistorialExt extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Guardar)
                             .addComponent(Limpiar)
-                            .addComponent(Volver)
                             .addComponent(Siguiente)))
                     .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38))
@@ -324,10 +313,6 @@ public class HistorialExt extends javax.swing.JFrame {
     ale.setText("");
     diag.setText("");
     }//GEN-LAST:event_LimpiarActionPerformed
-
-    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_VolverActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
         Historial historial = new Historial(
@@ -396,7 +381,6 @@ public class HistorialExt extends javax.swing.JFrame {
     private javax.swing.JButton Limpiar;
     private javax.swing.JTextArea Medac;
     private javax.swing.JButton Siguiente;
-    private javax.swing.JButton Volver;
     private javax.swing.JTextArea ale;
     private javax.swing.JTextArea diag;
     private javax.swing.JLabel jLabel1;

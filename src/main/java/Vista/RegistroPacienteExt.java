@@ -5,6 +5,7 @@
 package Vista;
 import modelo.*;
 import con.Hospital;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -37,6 +38,7 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         campoNumero = new javax.swing.JTextField();
         volver = new javax.swing.JButton();
+        agregarHistorial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +53,6 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
         jLabel1.setText("Registro Paciente Externo");
 
         campoNombre.setForeground(new java.awt.Color(153, 153, 153));
-        campoNombre.setText("Ingrese el nombre del paciente");
         campoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoNombreActionPerformed(evt);
@@ -65,7 +66,6 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
         jLabel3.setText("Número de documento");
 
         campoNumero.setForeground(new java.awt.Color(153, 153, 153));
-        campoNumero.setText("Ingrese el id del paciente");
         campoNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoNumeroActionPerformed(evt);
@@ -79,6 +79,13 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
             }
         });
 
+        agregarHistorial.setText("Añadir historial");
+        agregarHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarHistorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,23 +95,28 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(volver)
-                        .addGap(54, 54, 54)
-                        .addComponent(RegistrarPaciente))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(71, 71, 71)
+                            .addComponent(volver)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(agregarHistorial))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(55, 55, 55)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(campoNumero))))))
                 .addContainerGap(58, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(RegistrarPaciente)
+                .addGap(136, 136, 136))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,10 +131,12 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(RegistrarPaciente)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(volver)
-                    .addComponent(RegistrarPaciente))
+                    .addComponent(agregarHistorial))
                 .addGap(36, 36, 36))
         );
 
@@ -138,9 +152,10 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
         PacienteExterno p = Hospital.crearPacienteExterno(nombre, id);
         this.pacienteActual =p;
         
-        HistorialExt historial = new HistorialExt(pacienteActual);
-        historial.setVisible(true);
-        dispose();
+        JOptionPane.showMessageDialog(this, "Paciente " + p.getNombre()+ " registrad@ correctamente");
+        
+        campoNombre.setText("");
+        campoNumero.setText("");
     }//GEN-LAST:event_RegistrarPacienteActionPerformed
 
     private void campoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNombreActionPerformed
@@ -156,6 +171,14 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
         new Menu().setVisible(true);
         dispose();
     }//GEN-LAST:event_volverActionPerformed
+
+    private void agregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarHistorialActionPerformed
+         
+        HistorialExt historial = new HistorialExt(pacienteActual);
+        historial.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_agregarHistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,6 +207,7 @@ public class RegistroPacienteExt extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RegistrarPaciente;
+    private javax.swing.JButton agregarHistorial;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JTextField campoNumero;
     private javax.swing.JLabel jLabel1;
