@@ -6,6 +6,7 @@ package con;
 
 import modelo.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,18 +37,7 @@ public class Hospital {
         return p;
     }
     
-    public static void guardarSignos (PacienteInterno p, double presion, double fc, double temperatura, double fr){
-        
-        p.getSignosVitales().setPresion(presion);
-        p.getSignosVitales().setFrecuenciaCardiaca(fc);
-        p.getSignosVitales().setTemperatura(temperatura);
-        p.getSignosVitales().setFrecuenciaRespiratoria(fr);
-        
-        p.getSignosVitales().EvaluarAlertas(fc, temperatura, fr);
-        p.evaluarEstado();
-    }
-    
-        public ArrayList<PacienteInterno> getPacientesint() {
+    public ArrayList<PacienteInterno> getPacientesint() {
         return pacientesint;
     }
 }

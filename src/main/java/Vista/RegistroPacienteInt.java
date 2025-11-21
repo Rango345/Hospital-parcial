@@ -40,6 +40,7 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         campoNumero = new javax.swing.JTextField();
         volver = new javax.swing.JButton();
         botonSignos = new javax.swing.JButton();
+        agregarHistorial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +101,13 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
             }
         });
 
+        agregarHistorial.setText("Añadir historial");
+        agregarHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarHistorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,14 +130,19 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
                             .addComponent(campoNombre)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(volver)
+                        .addGap(26, 26, 26)
+                        .addComponent(agregarHistorial)
                         .addGap(18, 18, 18)
-                        .addComponent(RegistrarPaciente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(botonSignos)))
                 .addGap(12, 12, 12))
             .addGroup(layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(RegistrarPaciente)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -149,11 +162,13 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(campoHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(RegistrarPaciente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RegistrarPaciente)
                     .addComponent(volver)
-                    .addComponent(botonSignos))
+                    .addComponent(botonSignos)
+                    .addComponent(agregarHistorial))
                 .addGap(26, 26, 26))
         );
 
@@ -167,11 +182,7 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
         double id= Double.parseDouble(campoNumero.getText());
         int habitacion= Integer.parseInt(campoHabitacion.getText());
         PacienteInterno p = Hospital.crearPacienteInterno(nombre, id, habitacion);
-        this.pacienteActual =p;
-        
-        HistorialFrame historial = new HistorialFrame(pacienteActual);
-       historial.setVisible(true);
-       dispose();
+        this.pacienteActual = p;
     }//GEN-LAST:event_RegistrarPacienteActionPerformed
 
     private void campoHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoHabitacionActionPerformed
@@ -194,10 +205,18 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
 
     private void botonSignosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSignosActionPerformed
         
-        new RegistroSignosVitales(this,pacienteActual).setVisible(true);
-        this.setVisible(false);
+        RegistroSignosVitales registroSignos = new RegistroSignosVitales(pacienteActual);
+        registroSignos.setVisible(true);
+        dispose();
     }//GEN-LAST:event_botonSignosActionPerformed
-           private PacienteInterno pac;
+
+    private void agregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarHistorialActionPerformed
+        
+       HistorialFrame historial = new HistorialFrame(pacienteActual);
+       historial.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_agregarHistorialActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,6 +244,7 @@ public class RegistroPacienteInt extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton RegistrarPaciente;
+    private javax.swing.JButton agregarHistorial;
     private javax.swing.JButton botonSignos;
     private javax.swing.JTextField campoHabitacion;
     private javax.swing.JTextField campoNombre;

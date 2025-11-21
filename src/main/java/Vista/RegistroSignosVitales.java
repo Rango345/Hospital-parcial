@@ -6,6 +6,7 @@ package Vista;
 import con.Hospital;
 import modelo.*;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,13 +15,11 @@ import javax.swing.JFrame;
 public class RegistroSignosVitales extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SignosVitales.class.getName());
-    private JFrame ventanaAnterior;
     private PacienteInterno paciente;
     /**
      * Creates new form NewJFrame
      */
-    public RegistroSignosVitales(JFrame ventanaAnterior, PacienteInterno paciente) {
-        this.ventanaAnterior = ventanaAnterior;
+    public RegistroSignosVitales(PacienteInterno paciente) {
         this.paciente = paciente;
         initComponents();
     }
@@ -182,7 +181,12 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         double temperatura = Double.parseDouble(campoTemperatura.getText());
         double fr = Double.parseDouble(campoFR.getText());
         
-        Hospital.guardarSignos(paciente, presion, fc, temperatura, fr);
+        SignosVitales signos= new SignosVitales(presion,fc,temperatura,fr);
+        paciente.setSignosVitales(signos);
+        signos.EvaluarAlertas();
+        paciente.evaluarEstado();
+        
+        JOptionPane.showMessageDialog(this, "Historial guardado para " + paciente.getNombre());
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void campoTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoTemperaturaActionPerformed
@@ -202,7 +206,7 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
     }//GEN-LAST:event_campoPresionActionPerformed
 
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
-        ventanaAnterior.setVisible(true);
+        new Menu().setVisible(true);
         dispose();
     }//GEN-LAST:event_VolverActionPerformed
 
@@ -228,7 +232,7 @@ public class RegistroSignosVitales extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new RegistroSignosVitales(null,null).setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new RegistroSignosVitales(null).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
